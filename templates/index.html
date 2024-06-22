@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classifier</title>
+</head>
+<body>
+    <form action='/predict' method="POST">
+        <label class="labels">Sepal Length:</label>
+        <input class="inputs" type="text" name="sepal_length"><br>
+        <label class="labels">Sepal Width:</label>
+        <input class="inputs" type="text" name="sepal_width"><br>
+        <label class="labels">Petal Length:</label>
+        <input class="inputs" type="text" name="petal_length"><br>
+        <label class="labels">Petal Width:</label>
+        <input class="inputs" type="text" name="petal_width"><br>
+        Class: {{result}}<br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
