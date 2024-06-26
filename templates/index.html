@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css')}}">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iris Classifier</title>
+    <title>Iris Classification</title>
 </head>
 <body>
-    <form action='/predict' method="POST">
-        <label class="labels">Sepal Length:</label>
-        <input class="inputs" type="text" name="sepal_length"><br>
-        <label class="labels">Sepal Width:</label>
-        <input class="inputs" type="text" name="sepal_width"><br>
-        <label class="labels">Petal Length:</label>
-        <input class="inputs" type="text" name="petal_length"><br>
-        <label class="labels">Petal Width:</label>
-        <input class="inputs" type="text" name="petal_width"><br>
-        Class: {{result}}<br>
-        <input type="submit" value="Predict">
-    </form>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-image"></div>
+                <h2 class="card-heading">Iris Classification</h2>
+            </div>
+            <form class="card-form" action="{{ url_for('home')}}" method="POST">
+                <div class="input">
+                    <label class="input-label">Sepal Length in cm</label>
+                    <input name="SepalLength" type="number" step="any" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label class="input-label">Sepal Width in cm</label>
+                    <input name="SepalWidth" type="number" step="any" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label class="input-label">Petal Length in cm</label>
+                    <input name="PetalLength" type="number" step="any" class="input-field" required/>
+                </div>
+                <div class="input">
+                    <label class="input-label">Petal Width in cm</label>
+                    <input name="PetalWidth" type="number" step="any" class="input-field" required/>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+            {% if prediction %}
+                <center>
+                    <!-- <p style="color: purple; font-weight: 500">{{ prediction }}</p> -->
+                    <img src="{{ url_for('static', filename='images/' + prediction + '.png') }}" alt="{{ prediction }}">
+                </center>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>

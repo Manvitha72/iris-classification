@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgb(224, 207, 224);
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; 
+    background-color: white;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.card-heading {
+    font-size: 30px; 
+    font-weight: 500;
+    color: rgb(106, 42, 165);
+    text-align: left;
+    margin-right: 20px;
+}
+
+.card-image {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://thumbs.dreamstime.com/b/iris-purple-flower-showcasing-realistic-color-schemes-graceful-lines-detailed-botanical-illustrations-light-292226367.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.card-form {
+    width: 70%; 
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.input-label {
+    color: #20167d;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 20px); 
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(106, 42, 165);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: rgb(124, 78, 138);
+}
